@@ -11,5 +11,9 @@ mongoose.Promise = global.Promise;
 const db = {};
 db.mongoose = mongoose;
 db.uri = dbConfig.uri;
-
+db.games = require('./games.js')(mongoose);
+db.movies = require('./movies.js')(mongoose);
+db.users = require('./users.js')(mongoose);
+db.shows = require('./shows.js')(mongoose);
+db.reviews = require('./reviews.js')(mongoose);
 module.exports = db;

@@ -5,10 +5,11 @@
     "description": "an app for nerds",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "",
   "basePath": "/",
   "schemes": [
-    "http"
+    "http",
+    "https"
   ],
   "paths": {}
 }
