@@ -1,11 +1,7 @@
 const router = require('express').Router();
-//get the game model
-const Game = require("../models/games");
+const controller = require('../controllers/games-controller');
 
 //get all posts
-router.get("/", async (req, res) => {
-    const games = await Game.find();
-    res.send(games);
-});
+router.get("/", controller.getGames);
 
 module.exports = router;
