@@ -6,12 +6,11 @@
     "dotenv": "^16.0.3",
     "eslint": "^8.27.0",
     "express": "^4.18.2",
-    "mongodb": "^4.11.0",
+    "mongodb": "^4.12.0",
     "mongoose": "^6.7.2",
     "nodemon": "^2.0.20",
     "npm": "^9.1.1",
     "prettier": "^2.7.1",
-    "swagger-autogen": "^2.22.0",
     "swagger-ui-express": "^4.6.0"
   },
   "name": "nerdom",
@@ -36,5 +35,8 @@
   "bugs": {
     "url": "https://github.com/jambrizz/nerdom/issues"
   },
-  "homepage": "https://github.com/jambrizz/nerdom#readme"
+  "homepage": "https://github.com/jambrizz/nerdom#readme",
+  "devDependencies": {
+    "swagger-autogen": "^2.22.0"
+  }
 }
