@@ -11,4 +11,20 @@ const getGames = async (req, res, next) => {
     }
 };
 
-module.exports = {getGames};
+const postGame = async (req, res) => {
+    const game = new Game({
+        title: req.body.title,
+        genres: req.body.genres,
+        developers: req.body.developers,
+        publishers: req.body.publishers,
+        creators: req.body.creators,
+        platforms: req.body.platforms,
+        prominent_chars: req.body.prominent_chars,
+        actors: req.body.actors,
+        description: req.body.description
+    });
+    await game.save();
+    res.send(game);
+};
+
+module.exports = {getGames, postGame};
