@@ -8,12 +8,12 @@
   "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
-    "http", "https"
+    "http"
   ],
   "paths": {
     "/games/": {
       "get": {
-        "description": "",
+        "description": "Get all games",
         "parameters": [],
         "responses": {
           "200": {
@@ -22,7 +22,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "Post one game to the database",
         "parameters": [
           {
             "name": "body",
@@ -59,6 +59,60 @@
                 }
               }
             }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/games/{id}": {
+      "get": {
+        "description": "Get one game based on ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/games/find/{title}": {
+      "get": {
+        "description": "Get one game based on title",
+        "parameters": [
+          {
+            "name": "title",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/games/find/{genre}": {
+      "get": {
+        "description": "Get one game based on title",
+        "parameters": [
+          {
+            "name": "genre",
+            "in": "path",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
