@@ -6,7 +6,6 @@ const gamesSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
-        lowercase: true,
         trim: true,
         required: true
     },
@@ -41,7 +40,6 @@ const gamesSchema = new mongoose.Schema({
     description: {
         type: String,
         required: true,
-        lowercase: true,
         trim: true,
     },
 }, 

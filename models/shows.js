@@ -5,38 +5,31 @@ const mongoose = require('mongoose');
 const showsSchema = new mongoose.Schema({
     title: {
         type: String,
-        required: true,
-        lowercase: true
+        required: true
     },
     description: {
         type: String,
-        required: true,
-        lowercase: true
+        required: true
     },
     genres: {
         type: Array,
-        required: true,
-        lowercase: true
+        required: true
     },
     creators: {
         type: Array,
-        required: true,
-        lowercase: true
+        required: true
     },
     producers: {
         type: Array,
-        required: true,
-        lowercase: true
+        required: true
     },
     production_companies: {
         type: Array,
-        required: true,
-        lowercase: true
+        required: true
     },
     distributor: {
         type: String,
-        required: true,
-        lowercase: true
+        required: true
     },
     release_date: {
         type: Date,
@@ -45,18 +38,15 @@ const showsSchema = new mongoose.Schema({
     status: {
         type: String,
         required: true,
-        lowercase: true,
         trim: true
     },
     prominent_chars: {
         type: Array,
-        required: true,
-        lowercase: true
+        required: true
     },
     actors: {
         type: Array,
-        required: true,
-        lowercase: true
+        required: true
     },
 }, 
 {

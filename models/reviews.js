@@ -10,13 +10,11 @@ const reviewsSchema = new mongoose.Schema({
     },
     media: {
         type: String,
-        required: true,
-        lowercase: true
+        required: true
     },
     review: {
         type: String,
-        required: true,
-        lowercase: true
+        required: true
     },
 }, 
 {
