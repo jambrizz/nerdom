@@ -6,61 +6,50 @@ const moviesSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
-        lowercase: true,
         trim: true
     },
     description: {
         type: String,
         required: true,
-        lowercase: true,
         trim: true
     },
     director: {
         type: String,
         required: true,
-        lowercase: true,
         trim: true
     },
     writers: {
         type: Array,
-        required: true,
-        lowercase: true
+        required: true
     },
     producers: {
         type: Array,
-        required: true,
-        lowercase: true
+        required: true
     },
     production_companies: {
         type: Array,
-        required: true,
-        lowercase: true
+        required: true
     },
     release_date: {
         type: String,
         required: true,
-        lowercase: true,
         trim: true
     },
     actors: {
         type: Array,
-        required: true,
-        lowercase: true
+        required: true
     },
     prominent_chars: {
         type: Array,
-        required: true,
-        lowercase: true
+        required: true
     },
     genres: {
         type: Array,
-        required: true,
-        lowercase: true
+        required: true
     },
     distribution: {
         type: String,
         required: true,
-        lowercase: true,
         trim: true
     }
 }, 
