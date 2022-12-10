@@ -2,13 +2,14 @@
   "swagger": "2.0",
   "info": {
     "title": "Nerdom",
-    "description": "an app for nerds",
+    "description": "An app for nerds",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "",
   "basePath": "/",
   "schemes": [
-    "http"
+    "http",
+    "https"
   ],
   "paths": {
     "/games/": {
@@ -84,6 +85,80 @@
             "description": "OK"
           }
         }
+      },
+      "put": {
+        "description": "Update one game in the database using the ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "any"
+                },
+                "genres": {
+                  "example": "any"
+                },
+                "developers": {
+                  "example": "any"
+                },
+                "publishers": {
+                  "example": "any"
+                },
+                "creators": {
+                  "example": "any"
+                },
+                "platforms": {
+                  "example": "any"
+                },
+                "prominent_chars": {
+                  "example": "any"
+                },
+                "actors": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete one game from the database using the ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       }
     },
     "/games/find/{title}": {
@@ -133,10 +208,174 @@
         }
       }
     },
+    "/movies/{id}": {
+      "put": {
+        "description": "Update a movie based on ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "director": {
+                  "example": "any"
+                },
+                "writers": {
+                  "example": "any"
+                },
+                "producers": {
+                  "example": "any"
+                },
+                "production_companies": {
+                  "example": "any"
+                },
+                "release_date": {
+                  "example": "any"
+                },
+                "actors": {
+                  "example": "any"
+                },
+                "prominent_chars": {
+                  "example": "any"
+                },
+                "genres": {
+                  "example": "any"
+                },
+                "distribution": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete a movie based on ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/reviews/": {
       "get": {
         "description": "",
         "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/reviews/{id}": {
+      "put": {
+        "description": "Update a review based on ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "user_id": {
+                  "example": "any"
+                },
+                "media": {
+                  "example": "any"
+                },
+                "review": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete a review based on ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/authorization/login": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/authorization/callback": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "code",
+            "in": "query",
+            "type": "string"
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -155,6 +394,88 @@
         }
       }
     },
+    "/shows/{id}": {
+      "put": {
+        "description": "Update one show based on ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "genres": {
+                  "example": "any"
+                },
+                "creators": {
+                  "example": "any"
+                },
+                "producers": {
+                  "example": "any"
+                },
+                "production_companies": {
+                  "example": "any"
+                },
+                "distributor": {
+                  "example": "any"
+                },
+                "release_date": {
+                  "example": "any"
+                },
+                "status": {
+                  "example": "any"
+                },
+                "prominent_chars": {
+                  "example": "any"
+                },
+                "actors": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete one show based on ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/users/": {
       "get": {
         "description": "",
@@ -162,6 +483,61 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "put": {
+        "description": "Update one user based on ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete one user based on ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }

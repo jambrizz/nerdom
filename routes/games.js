@@ -10,4 +10,9 @@ router.get("/find/:genre", controller.getGamesByGenre);
 //ALL POST REQUESTS
 router.post("/", controller.postGame);
 
+//ALL PUT REQUESTS
+router.put("/:id", controller.putGame);
+
+//ALL DELETE REQUESTS
+router.delete("/:id", controller.deleteGame);
 module.exports = router;

@@ -1,0 +1,132 @@
+////////////////////////////////////////////////////////
+////////Local Host
+////////////////////////////////////////////////////////
+
+//Authorization
+
+//Games
+
+###
+Get 
+
+###
+POST 
+
+###
+PUT http://localhost:3000/games/insertID HTTP/1.1
+Content-Type: application/json
+{
+    "title": "test",
+    "genres": "test",
+    "developers": "test",
+    "publishers": "test",
+    "creators": "test",
+    "platforms": "test",
+    "prominent_chars": "test",
+    "actors": "test",
+    "description": "test"
+}
+
+###
+DELETE http://localhost:3000/games/insertID HTTP/1.1
+
+//Movies
+
+###
+Get
+
+###
+POST
+
+###
+PUT http://localhost:3000/movies/insertID HTTP/1.1
+Content-Type: application/json
+{
+    "title": "test",
+    "description": "test",
+    "director": "test",
+    "writers": "test",
+    "producers": "test",
+    "production_companies": "test",
+    "release_date": "test",
+    "actors": "test",
+    "prominent_chars": "test",
+    "genres": "test",
+    "distribution": "test"
+}
+
+###
+DELETE http://localhost:3000/movies/insertID HTTP/1.1
+
+//Reviews
+
+###
+Get
+
+###
+POST
+
+###
+PUT http://localhost:3000/reviews/insertID HTTP/1.1
+Content-Type: application/json
+{
+    "user_id": "test",
+    "media": "test",
+    "review": "test"
+}
+
+###
+DELETE http://localhost:3000/reviews/insertID HTTP/1.1
+
+//Shows
+
+###
+Get
+
+###
+POST
+
+###
+PUT http://localhost:3000/shows/insertID HTTP/1.1
+Content-Type: application/json
+{
+    "title": "test",
+    "description": "test",
+    "genres": "test",
+    "creators": "test",
+    "producers": "test",
+    "production_companies": "test",
+    "distributor": "test",
+    "release_date": "test",
+    "status": "test",
+    "prominent_chars": "test",
+    "actors":"test"
+}
+
+###
+DELETE http://localhost:3000/shows/insertID HTTP/1.1
+
+//Users
+
+###
+Get
+
+###
+POST
+
+###
+PUT http://localhost:3000/users/insertID HTTP/1.1
+Content-Type: application/json
+{
+    "username": "test",
+    "password": "test"
+}
+
+###
+DELETE http://localhost:3000/users/insertID HTTP/1.1
+
+////////////////////////////////////////////////////////
+////////Production Host
+////////////////////////////////////////////////////////
+
+//https://nerdom.onrender.com

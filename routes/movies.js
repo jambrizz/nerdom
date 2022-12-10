@@ -4,4 +4,12 @@ const controller = require('../controllers/movies-controller');
 //get all posts
 router.get("/", controller.getMovies);
 
+//All POST requests
+
+//All PUT requests
+router.put("/:id", controller.putMovie);
+
+//All DELETE requests
+router.delete("/:id", controller.deleteMovie);
+
 module.exports = router;

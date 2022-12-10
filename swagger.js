@@ -3,10 +3,13 @@ const swaggerAutogen = require('swagger-autogen')();
 const doc = {
   info: {
     title: 'Nerdom',
-    description: 'an app for nerds',
+    description: 'An app for nerds',
   },
-  host: 'localhost:3000',
-  schemes: ['http'],
+  host: '',
+  schemes: [
+    'http',
+    'https'
+  ],
 };
 
 const outputFile = './swagger-output.json';
