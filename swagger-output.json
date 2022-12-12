@@ -161,7 +161,7 @@
         }
       }
     },
-    "/games/find/{title}": {
+    "/games/{title}": {
       "get": {
         "description": "Get one game based on title",
         "parameters": [
@@ -179,7 +179,7 @@
         }
       }
     },
-    "/games/find/{genre}": {
+    "/games/{genre}": {
       "get": {
         "description": "Get one game based on title",
         "parameters": [
@@ -199,7 +199,7 @@
     },
     "/movies/": {
       "get": {
-        "description": "",
+        "description": "Get all movies",
         "parameters": [],
         "responses": {
           "200": {
@@ -208,7 +208,7 @@
         }
       },
       "post": {
-        "description": "Post one game to the database",
+        "description": "Post one movie to the database",
         "parameters": [
           {
             "name": "body",
@@ -261,6 +261,22 @@
       }
     },
     "/movies/{id}": {
+      "get": {
+        "description": "Get one movie based on ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "put": {
         "description": "Update a movie based on ID",
         "parameters": [
@@ -344,8 +360,39 @@
     },
     "/reviews/": {
       "get": {
-        "description": "",
+        "description": "Get all reviews",
         "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "Post one review to the database",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "user_id": {
+                  "example": "any"
+                },
+                "media": {
+                  "example": "any"
+                },
+                "review": {
+                  "example": "any"
+                },
+                "media_id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"

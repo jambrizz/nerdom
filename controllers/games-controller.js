@@ -37,7 +37,7 @@ const getGameByTitle = async (req, res, next) => {
 const getGamesByGenre = async (req, res, next) => {
     // #swagger.description = 'Get one game based on title'
     try {
-        const games = await Game.find({ genre: req.params.genre });
+        const games = await Game.find({ genre: [req.params.genre] });
         res.send(games);
     } catch (error) {
         next(error);
@@ -47,7 +47,7 @@ const getGamesByGenre = async (req, res, next) => {
 /** POST requests */
 const postGame = async (req, res) => {
     // #swagger.description = 'Post one game to the database'
-    const game = new Game.updateOne({
+    const game = new Game({
         title: req.body.title,
         genres: req.body.genres,
         developers: req.body.developers,

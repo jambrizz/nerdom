@@ -5,6 +5,7 @@ const Movie = require("../models/movies");
 
 /** GET requests */
 const getMovies = async (req, res, next) => {
+    // #swagger.description = 'Get all movies'
     try {
         const movies = await Movie.find();
         res.send(movies);
@@ -13,10 +14,20 @@ const getMovies = async (req, res, next) => {
     }
 };
 
+const getMovieById = async (req, res, next) => {
+    // #swagger.description = 'Get one movie based on ID'
+    try {
+        const movie = await Movie.findOne({ _id: req.params.id });
+        res.send(movie);
+    } catch (error) {
+        next(error);
+    }
+}
+
 /** POST requests */
 const postMovie = async (req, res) => {
-    // #swagger.description = 'Post one game to the database'
-    const movie = new Movie.updateOne({
+    // #swagger.description = 'Post one movie to the database'
+    const movie = new Movie({
         title: req.body.title,
         description: req.body.description,
         director: req.body.director,
@@ -71,6 +82,7 @@ const deleteMovie = async (req, res, next) => {
 
 module.exports = {
     getMovies,
+    getMovieById,
     postMovie,
     putMovie,
     deleteMovie

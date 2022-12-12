@@ -1,8 +1,11 @@
 const router = require('express').Router();
 const controller = require('../controllers/reviews-controller');
 
-//get all posts
+//GET REQUESTS
 router.get("/", controller.getReviews);
+
+//POST REQUEST
+router.post("/", controller.postReview);
 
 //PUT request
 router.put("/:id", controller.putReview);

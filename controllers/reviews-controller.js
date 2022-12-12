@@ -3,13 +3,28 @@ const mongoose = require('mongoose');
 //get the review model
 const Review = require("../models/reviews");
 
+/** GET requests */
 const getReviews = async (req, res, next) => {
+    // #swagger.description = 'Get all reviews'
     try {
         const reviews = await Review.find();
         res.send(reviews);
     } catch (error) {
         next(error);
     }
+};
+
+/** POST requests */
+const postReview = async (req, res) => {
+    // #swagger.description = 'Post one review to the database'
+    const review = new Review({
+        user_id: req.body.user_id,
+        media: req.body.media,
+        review: req.body.review,
+        media_id: req.body.media_id
+    });
+    await game.save();
+    res.send(review);
 };
 
 //Put request
@@ -42,6 +57,7 @@ const deleteReview = async (req, res, next) => {
 
 module.exports = {
     getReviews,
+    postReview,
     putReview,
     deleteReview
 };
