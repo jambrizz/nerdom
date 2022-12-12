@@ -206,6 +206,58 @@
             "description": "OK"
           }
         }
+      },
+      "post": {
+        "description": "Post one game to the database",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "director": {
+                  "example": "any"
+                },
+                "writers": {
+                  "example": "any"
+                },
+                "producers": {
+                  "example": "any"
+                },
+                "production_companies": {
+                  "example": "any"
+                },
+                "release_date": {
+                  "example": "any"
+                },
+                "actors": {
+                  "example": "any"
+                },
+                "prominent_chars": {
+                  "example": "any"
+                },
+                "genres": {
+                  "example": "any"
+                },
+                "distribution": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/movies/{id}": {

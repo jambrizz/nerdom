@@ -5,6 +5,7 @@ const controller = require('../controllers/movies-controller');
 router.get("/", controller.getMovies);
 
 //All POST requests
+router.post("/", controller.postMovie);
 
 //All PUT requests
 router.put("/:id", controller.putMovie);

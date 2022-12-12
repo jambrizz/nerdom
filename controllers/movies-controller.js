@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 //get the movie model
 const Movie = require("../models/movies");
 
+/** GET requests */
 const getMovies = async (req, res, next) => {
     try {
         const movies = await Movie.find();
@@ -10,6 +11,26 @@ const getMovies = async (req, res, next) => {
     } catch (error) {
         next(error);
     }
+};
+
+/** POST requests */
+const postMovie = async (req, res) => {
+    // #swagger.description = 'Post one game to the database'
+    const movie = new Movie.updateOne({
+        title: req.body.title,
+        description: req.body.description,
+        director: req.body.director,
+        writers: req.body.writers,
+        producers: req.body.producers,
+        production_companies: req.body.production_companies,
+        release_date: req.body.release_date,
+        actors: req.body.actors,
+        prominent_chars: req.body.prominent_chars,
+        genres: req.body.genres,
+        distribution: req.body.distribution
+    });
+    await movie.save();
+    res.send(movie);
 };
 
 //PUT request
@@ -50,6 +71,7 @@ const deleteMovie = async (req, res, next) => {
 
 module.exports = {
     getMovies,
+    postMovie,
     putMovie,
     deleteMovie
 };
