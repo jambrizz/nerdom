@@ -3,13 +3,35 @@ const mongoose = require('mongoose');
 //get the review model
 const Show = require("../models/shows");
 
+/** ALL GET REQUESTS */
 const getShows = async (req, res, next) => {
+    // #swagger.description = 'Get all shows'
     try {
         const shows = await Show.find();
         res.send(shows);
     } catch (error) {
         next(error);
     }
+};
+
+/** ALL POST REQUESTS */
+const postShow = async (req, res) => {
+    // #swagger.description = 'Post one game to the database'
+    const show = new Show({
+        title: req.body.title,
+        description: req.body.description,
+        genres: req.body.genres,
+        creators: req.body.creators,
+        producers: req.body.producers,
+        production_companies: req.body.production_companies,
+        distributor: req.body.distributor,
+        release_date: req.body.release_date,
+        status: req.body.status,
+        prominent_chars: req.body.prominent_chars,
+        actors: req.body.actors,
+    });
+    await show.save();
+    res.send(show);
 };
 
 //Put request
@@ -50,6 +72,7 @@ const deleteShow = async (req, res, next) => {
 
 module.exports = {
     getShows,
+    postShow,
     putShow,
     deleteShow
 };

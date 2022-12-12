@@ -358,6 +358,24 @@
         }
       }
     },
+    "/movies/{title}": {
+      "get": {
+        "description": "Get one movie from a title",
+        "parameters": [
+          {
+            "name": "title",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/reviews/": {
       "get": {
         "description": "Get all reviews",
@@ -484,8 +502,60 @@
     },
     "/shows/": {
       "get": {
-        "description": "",
+        "description": "Get all shows",
         "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "Post one game to the database",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "genres": {
+                  "example": "any"
+                },
+                "creators": {
+                  "example": "any"
+                },
+                "producers": {
+                  "example": "any"
+                },
+                "production_companies": {
+                  "example": "any"
+                },
+                "distributor": {
+                  "example": "any"
+                },
+                "release_date": {
+                  "example": "any"
+                },
+                "status": {
+                  "example": "any"
+                },
+                "prominent_chars": {
+                  "example": "any"
+                },
+                "actors": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"

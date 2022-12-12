@@ -24,6 +24,16 @@ const getMovieById = async (req, res, next) => {
     }
 }
 
+const getMovieByTitle = async (req, res, next) => {
+    // #swagger.description = 'Get one movie from a title'
+    try {
+        const movie = await Movie.findOne({ title: req.params.title });
+        res.send(movie);
+    } catch (error) {
+        next(error);
+    }
+}
+
 /** POST requests */
 const postMovie = async (req, res) => {
     // #swagger.description = 'Post one movie to the database'
@@ -83,6 +93,7 @@ const deleteMovie = async (req, res, next) => {
 module.exports = {
     getMovies,
     getMovieById,
+    getMovieByTitle,
     postMovie,
     putMovie,
     deleteMovie
