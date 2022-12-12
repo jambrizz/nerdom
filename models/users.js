@@ -1,5 +1,6 @@
 //This files is for the users schema
 
+const { Double } = require('mongodb');
 const mongoose = require('mongoose');
 
 const usersSchema = new mongoose.Schema({
@@ -14,6 +15,22 @@ const usersSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
+    reviews: {
+        type: Number,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true
+    },
+    first_name: {
+        type: String,
+        required: true
+    },
+    last_name: {
+        type: String,
+        required: true
+    }
 },
 {
     collection: 'users'

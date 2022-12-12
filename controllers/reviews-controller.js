@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 //get the review model
 const Review = require("../models/reviews");
+//const userControl = require("./users-controller");
 
 /** GET requests */
 const getReviews = async (req, res, next) => {
@@ -23,7 +24,7 @@ const postReview = async (req, res) => {
         review: req.body.review,
         media_id: req.body.media_id
     });
-    await game.save();
+    await review.save();
     res.send(review);
 };
 
