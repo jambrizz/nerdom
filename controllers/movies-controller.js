@@ -22,7 +22,7 @@ const getMovieById = async (req, res, next) => {
     } catch (error) {
         next(error);
     }
-}
+};
 
 const getMovieByTitle = async (req, res, next) => {
     // #swagger.description = 'Get one movie from a title'
@@ -32,7 +32,7 @@ const getMovieByTitle = async (req, res, next) => {
     } catch (error) {
         next(error);
     }
-}
+};
 
 /** POST requests */
 const postMovie = async (req, res) => {

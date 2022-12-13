@@ -15,6 +15,16 @@ const getReviews = async (req, res, next) => {
     }
 };
 
+const getReviewById = async (req, res, next) => {
+    // #swagger.description = 'Get one review based on ID'
+    try {
+        const review = await Review.findOne({ _id: req.params.id });
+        res.send(review);
+    } catch (error) {
+        next(error);
+    }
+};
+
 /** POST requests */
 const postReview = async (req, res) => {
     // #swagger.description = 'Post one review to the database'
@@ -58,6 +68,7 @@ const deleteReview = async (req, res, next) => {
 
 module.exports = {
     getReviews,
+    getReviewById,
     postReview,
     putReview,
     deleteReview

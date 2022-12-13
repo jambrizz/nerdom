@@ -3,6 +3,7 @@ const controller = require('../controllers/reviews-controller');
 
 //GET REQUESTS
 router.get("/", controller.getReviews);
+router.get("/:id", controller.getReviewById);
 
 //POST REQUEST
 router.post("/", controller.postReview);

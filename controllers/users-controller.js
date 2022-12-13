@@ -12,6 +12,16 @@ const getUsers = async (req, res, next) => {
     }
 };
 
+const getUserById = async (req, res, next) => {
+    // #swagger.description = 'Get one user based on ID'
+    try {
+        const user = await User.findOne({ _id: req.params.id });
+        res.send(user);
+    } catch (error) {
+        next(error);
+    }
+};
+
 /** POST requests */
 const postUser = async (req, res) => {
     // #swagger.description = 'Post one review to the database'
@@ -66,6 +76,7 @@ const deleteUser = async (req, res, next) => {
 
 module.exports = {
     getUsers,
+    getUserById,
     postUser,
     putReviews,
     putUser,

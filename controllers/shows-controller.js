@@ -14,6 +14,16 @@ const getShows = async (req, res, next) => {
     }
 };
 
+const getShowById = async (req, res, next) => {
+    // #swagger.description = 'Get one show based on ID'
+    try {
+        const show = await Show.findOne({ _id: req.params.id });
+        res.send(show);
+    } catch (error) {
+        next(error);
+    }
+};
+
 /** ALL POST REQUESTS */
 const postShow = async (req, res) => {
     // #swagger.description = 'Post one game to the database'
@@ -72,6 +82,7 @@ const deleteShow = async (req, res, next) => {
 
 module.exports = {
     getShows,
+    getShowById,
     postShow,
     putShow,
     deleteShow

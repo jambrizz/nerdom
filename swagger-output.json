@@ -419,6 +419,22 @@
       }
     },
     "/reviews/{id}": {
+      "get": {
+        "description": "Get one review based on ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "put": {
         "description": "Update a review based on ID",
         "parameters": [
@@ -564,6 +580,22 @@
       }
     },
     "/shows/{id}": {
+      "get": {
+        "description": "Get one show based on ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "put": {
         "description": "Update one show based on ID",
         "parameters": [
@@ -694,6 +726,22 @@
       }
     },
     "/users/{id}": {
+      "get": {
+        "description": "Get one user based on ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "put": {
         "description": "Update one user based on ID",
         "parameters": [
