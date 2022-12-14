@@ -1,0 +1,94 @@
+<h3>Edit Movie</h3>
+<div class="row">
+    <form action="/movies/{{movies._id}}" method="POST" class="col s12">
+    <input type="hidden" name="_method" value="PUT">
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="title" name="title" value="{{movies.title}}">
+                <label for="title">Title</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <select id="status" name="status" >
+                    {{#select movies.status}}
+                    <option value="private" selected>Private</option>
+                    <option value="public">Public</option>
+                    {{/select}}
+                </select>
+                <label for="status">Status</label>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="director" name="director" value="{{movies.director}}" >
+                <label for="title">director</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="writers" name="writers" value="{{movies.writers}}" >
+                <label for="title">Writers</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="producers" name="producers" value="{{movies.producers}}">
+                <label for="title">Producers</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="production_companies" name="production_companies" value="{{movies.production_companies}}" >
+                <label for="title">Production Companies</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="date" id="release_date" name="release_date" >
+                <label for="title">Release Date</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="actors" name="actors" value="{{movies.actors}}">
+                <label for="title">Actors</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="prominent_chars" name="prominent_chars" value="{{movies.prominent_chars}}">
+                <label for="title">Priminent Chars</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="distribution" name="distribution" value="{{movies.distribution}}">
+                <label for="title">Distribution</label>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="input-field">
+                <h5>Description</h5>
+                <textarea id="description" name="description" ">{{movies.description}}</textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>
