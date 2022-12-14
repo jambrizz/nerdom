@@ -17,6 +17,7 @@
 
 <body>
 {{> _header}}
+{{> _add_btn}}
     <div class="container">
         {{{body}}}
     </div>
@@ -26,9 +27,9 @@
         integrity="sha256-bEIQpI72w9NJuIVhTLFUF2/8uxl0u5800r8ddViuv+o=" crossorigin="anonymous"></script>
 
     <script>
-           M.Sidenav.init(document.querySelector('.sidenav'))
-        M.FormSelect.init(document.querySelector('#applied'))
-        CKEDITOR.replace('body', {
+        M.Sidenav.init(document.querySelector('.sidenav'))
+        M.FormSelect.init(document.querySelector('#status'))
+        CKEDITOR.replace('description', {
             plugins: 'wysiwygarea, toolbar, basicstyles, link'
         }) 
     </script>
