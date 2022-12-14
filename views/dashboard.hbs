@@ -1,1 +1,36 @@
-<h1>Dashboard</h1>
+<h6>Dashboard</h6>
+<h3>Welcome {{name}}</h3>
+<p>Here are your favorite movies, shows, and games</p>
+{{#if movies}}
+<table class="striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            {{!-- <th>Direction</th>
+            <th>Writers</th>
+            <th>Producers</th>
+            <th>Production Companies</th>
+            <th>Release Date</th>
+            <th>Actors</th>
+            <th>Prominent Chars</th>
+            <th>Genres</th>
+            <th>Distribution</th> --}}
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each movies}}
+        <tr>
+            <td><a href="/movies/{{_id}}">{{title}}</a></td>
+            <td><a href="/movies/{{_id}}">{{description}}</a></td>
+            <td></td>
+               
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+<p>You have not created any stories</p>
+{{/if}}

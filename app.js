@@ -1,5 +1,7 @@
 //creates a variable called express and sets it to the express module
 const express = require('express');
+//Database
+const mongoose = require('mongoose')
 //creates a variable to parse the body of the request
 const bodyParser = require('body-parser');
 //creates a variable to require CORS will move it to its own middleware file
@@ -19,7 +21,7 @@ const passport = require('passport')
 const session = require('express-session')
 const dotenv = require('dotenv')
 
-
+const MongoStore = require('connect-mongo');
 
 require('./config/passport')(passport)
 
@@ -54,6 +56,7 @@ app.use(
       secret: 'keyboard cat',
       resave: false,
       saveUninitialized: false,
+      store: MongoStore.create({mongoUrl: process.env.MONGODB_URI,})
       
     })
   )

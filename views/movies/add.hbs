@@ -1,0 +1,81 @@
+<h3>Add Movie</h3>
+<div class="row">
+    <form action="/movies" method="POST" class="col s12">
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="title" name="title">
+                <label for="title">Title</label>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="director" name="director">
+                <label for="title">director</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="date" id="writers" name="writers" >
+                <label for="title">Writers</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="producers" name="producers" >
+                <label for="title">Producers</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="production_companies" name="production_companies" >
+                <label for="title">Producers</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="date" id="release_date" name="release_date" >
+                <label for="title">Release Date</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="actors" name="actors" >
+                <label for="title">Actors</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="prominent_chars" name="prominent_chars" >
+                <label for="title">Priminent Chars</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="distribution" name="distribution" >
+                <label for="title">Distribution</label>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="input-field">
+                <h5>Description</h5>
+                <textarea id="body" name="body"></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>
