@@ -88,6 +88,29 @@ router.put('/:id', ensureAuth, async (req, res) => {
     }
   })
 
+   // @desc    Delete movies
+// @route   DELETE /moviess/:id
+router.delete('/:id', ensureAuth, async (req, res) => {
+    try {
+      let movies = await Movies.findById(req.params.id).lean()
+  
+      if (!movies) {
+        return res.render('error/404')
+      }
+  
+      if (movies.user != req.user.id) {
+        res.redirect('/movies')
+      } else {
+        await Movies.remove({ _id: req.params.id })
+        res.redirect('/dashboard')
+      }
+    } catch (err) {
+      console.error(err)
+      return res.render('error/500')
+    }
+  })
+
+
 
 // //get all posts
 // router.get("/", controller.getMovies);
