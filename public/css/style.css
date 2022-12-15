@@ -51,4 +51,9 @@ p {
 
   .navbar{
     background-color: #38B6FF;
+  
+  }
+
+  nav .nav-wrapper {
+    margin: 0 200px 0 200px;
   }

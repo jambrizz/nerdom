@@ -39,9 +39,10 @@ router.get('/', ensureAuth, async (req, res) => {
     }
   })
 
-    // @desc    Show single movies
-// @route   GET /moviess/:id
+// @desc    Show single movies
+// @route   GET /movies/:
 router.get('/:id', ensureAuth, async (req, res) => {
+    // #swagger.description = 'Get all movies'
     try {
       let movies = await Movies.findById(req.params.id).populate('user').lean()
   
