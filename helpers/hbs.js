@@ -28,6 +28,18 @@ module.exports = {
       return ''
     }
   },
+
+  editIcon: function (moviesUser, loggedUser, moviesId, floating = true) {
+    if (moviesUser._id.toString() == loggedUser._id.toString()) {
+      if (floating) {
+        return `<a href="/movies/edit/${moviesId}" class="btn-floating halfway-fab blue"><i class="fas fa-edit fa-small"></i></a>`
+      } else {
+        return `<a href="/movies/edit/${moviesId}"><i class="fas fa-edit"></i></a>`
+      }
+    } else {
+      return ''
+    }
+  },
   select: function (selected, options) {
     return options
       .fn(this)

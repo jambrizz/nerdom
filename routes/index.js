@@ -27,7 +27,7 @@ router.get('/dashboard', ensureAuth, async (req, res) => {
 })
 
 router.use('/api-docs', require('./docs'));
-router.use('/games', require('./games'));
+// router.use('/games', require('./games'));
 // router.use('/movies', require('./movies'));
 router.use('/reviews', require('./reviews'));
 router.use('/authorization', require('./authorization'));

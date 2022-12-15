@@ -15,8 +15,9 @@ p {
   }
   
    td .btn-float {
-    float: left !important;
+    float:inline-start !important;
     margin-right: 10px !important;
+    border-radius: 0px !important;
   }
   
   .img-small {
@@ -57,3 +58,5 @@ p {
   nav .nav-wrapper {
     margin: 0 200px 0 200px;
   }
+
+ 

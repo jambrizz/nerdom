@@ -42,6 +42,17 @@ const gamesSchema = new mongoose.Schema({
         required: true,
         trim: true,
     },
+
+    status: {
+        type: String,
+        required: true,
+        enum:['public','private']
+      },
+      
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+      }
 }, 
 {
     collection: 'games'

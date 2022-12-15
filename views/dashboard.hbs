@@ -1,7 +1,11 @@
-<h6>Dashboard</h6>
-<h3>Welcome {{name}}</h3>
-<p>Here are your favorite movies, shows, and games</p>
+
+<img class="hero" src="hero.jpeg" alt="hero"  style="width: 1000px; height: 200px; object-fit: cover;">
+<h3 class="center" style="color: white;">Welcome {{name}}</h3>
+<p>Here are your favorite movies, shows, and games</>
 {{#if movies}}
+
+<div>
+    <h6>Movies: </h6>
 <table class="striped">
     <thead>
         <tr>
@@ -19,7 +23,8 @@
         </tr>
     </thead>
     <tbody>
-        {{#each movies}}
+        {{#each movies }}
+       
         <tr>
             <td><a href="/movies/{{_id}}">{{title}}</a></td>
             <td><span class="dash-status">{{status}}</span></td>
@@ -30,6 +35,7 @@
             <td><a href="/movies/{{_id}}">{{prominent_chars}}</a></td>
             <td><a href="/movies/{{_id}}">{{genres}}</a></td>
             <td><a href="/movies/{{_id}}">{{distribution}}</a></td>
+           
             
 
             <td>
@@ -47,9 +53,69 @@
             </td>
                
         </tr>
+
         {{/each}}
+      
     </tbody>
 </table>
+</div>
 {{else}}
-<p>You have not created any stories</p>
+<p>You have not added any game yet</p>
 {{/if}}
+
+{{!-- {{#if games}}
+<div>
+    <h6>Games: </h6>
+<table class="striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Genres</th>
+            <th>Developers</th>
+            <th>Publishers</th>
+            <th>Creators</th>
+            <th>Platforms</th>
+            <th>Prominent chars</th>
+            <th>Actors</th>
+            <th>Distribution</th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each games }}
+        <tr>
+            <td><a href="/games/{{_id}}">{{title}}</a></td>
+            <td><span class="dash-status">{{status}}</span></td>
+            <td><a href="/games/{{_id}}">{{genres}}</a></td>
+            <td><a href="/games/{{_id}}">{{developers}}</a></td>
+            <td><a href="/games/{{_id}}">{{publishers}}</a></td>
+            <td><a href="/games/{{_id}}">{{creators}}</a></td>
+            <td><a href="/games/{{_id}}">{{platforms}}</a></td>
+            <td><a href="/games/{{_id}}">{{prominent_chars}}</a></td>
+            <td><a href="/games/{{_id}}">{{actors}}</a></td>
+            <td><a href="/games/{{_id}}">{{distribution}}</a></td>
+            
+
+            <td>
+                <a href="/movies/edit/{{_id}}" class="btn btn-float">
+                    <i class="fas fa-edit"></i>
+                </a>
+
+                 <form action="/movies/{{_id}}" method="POST" id="delete-form">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn red">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </form>
+
+            </td>
+               
+        </tr>
+
+        {{/each}}
+    </tbody>
+{{else}}
+<p>You have not added any movie yet</p>
+{{/if}} --}}

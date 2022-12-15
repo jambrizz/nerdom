@@ -108,6 +108,7 @@ app.use(
 app.use('/', require('./routes/index'))
 app.use('/auth', require('./routes/auth'))
 app.use('/movies', require('./routes/movies'))
+app.use('/games', require('./routes/games'))
 
   // Static folder
 app.use(express.static(path.join(__dirname, 'public')))

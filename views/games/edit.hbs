@@ -1,0 +1,94 @@
+<h3>Edit Games</h3>
+<div class="row">
+    <form action="/games" method="POST" class="col s12">
+    <input type="hidden" name="_method" value="PUT">
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="title" name="title" value="{{games.title}}">
+                <label for="title">Title</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <select id="status" name="status">
+                     {{#select movies.status}}
+                    <option value="private" selected>Private</option>
+                    <option value="public">Public</option>
+                     {{/select}}
+                </select>
+                <label for="status">Status</label>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="genres" name="genres" value="{{games.genres}}">
+                <label for="title">genres</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="developers" name="developers" value="{{games.developers}}" >
+                <label for="title">Writers</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="publishers" name="publishers" value="{{games.publishers}}" >
+                <label for="title">Producers</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="creators" name="creators" value="{{games.creators}}" >
+                <label for="title">Creators</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="platforms" name="platforms" value="{{games.platforms}}">
+                <label for="title">Release Date</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="actors" name="actors" value="{{games.actors}}">
+                <label for="title">Actors</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="prominent_chars" name="prominent_chars" value="{{games.prominent_chars}}" >
+                <label for="title">Prominent Chars</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="distribution" name="distribution" value="{{games.distribution}}" >
+                <label for="title">Distribution</label>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="input-field">
+                <h5>Description</h5>
+                <textarea id="description" name="description">{{games.description}}</textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>
