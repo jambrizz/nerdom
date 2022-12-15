@@ -39,6 +39,29 @@ router.get('/', ensureAuth, async (req, res) => {
     }
   })
 
+    // @desc    Show single movies
+// @route   GET /moviess/:id
+router.get('/:id', ensureAuth, async (req, res) => {
+    try {
+      let movies = await Movies.findById(req.params.id).populate('user').lean()
+  
+      if (!movies) {
+        return res.render('error/404')
+      }
+  
+      if (movies.user._id != req.user.id && movies.applied == 'applied') {
+        res.render('error/404')
+      } else {
+        res.render('movies/show', {
+          movies,
+        })
+      }
+    } catch (err) {
+      console.error(err)
+      res.render('error/404')
+    }
+  })
+
   // @desc    Show edit page
 // @route   GET /movies/edit/:id
 router.get('/edit/:id', ensureAuth, async (req, res) => {
